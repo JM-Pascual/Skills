@@ -1,0 +1,44 @@
+# Agent / LLM orchestration: support assistant with retrieval and tools.
+...@_style
+...@_icons
+direction: right
+
+title: Support assistant — agent orchestration {class: title}
+
+user: Customer {class: actor}
+
+app: Assistant backend {
+  class: boundary
+  api: Chat API {class: [svc; fastapi]}
+  agent: Agent loop {class: [svc; critical; python]}
+  tools: Tools {
+    class: boundary
+    search: search_docs {class: svc}
+    orders: lookup_order {class: svc}
+    ticket: create_ticket {class: svc}
+  }
+  vectors: Doc embeddings {class: [store; postgres]}
+  history: Conversation history {class: [store; redis]}
+}
+
+ingest: Ingestion {
+  class: boundary
+  docs: Help-center docs {class: [store; aws-s3]}
+  embed: Embedding job {class: [svc; aws-lambda]}
+}
+
+claude: Claude API {class: [external; anthropic]}
+shop: Orders service {class: external}
+zendesk: Ticketing system {class: external}
+
+user -> app.api: asks a question
+app.api -> app.agent: runs turn
+app.agent -> app.history: reads/writes
+app.agent -> claude: "messages + tool defs" {class: critical-path}
+claude -> app.agent: tool_use / answer {class: critical-path}
+app.agent -> app.tools: calls
+app.tools.search -> app.vectors: similarity search
+app.tools.orders -> shop: "GET /orders/:id"
+app.tools.ticket -> zendesk: creates ticket
+ingest.docs -> ingest.embed: "on upload [S3 event]" {class: async}
+ingest.embed -> app.vectors: upserts chunks

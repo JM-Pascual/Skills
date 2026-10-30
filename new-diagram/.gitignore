@@ -1,0 +1,4 @@
+# Skill-local icon cache: filled on demand by scripts/icons.py
+assets/icons/
+# Rendered output (reproducible with scripts/render-fit.sh)
+examples/out/

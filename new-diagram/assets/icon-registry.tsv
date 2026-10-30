@@ -1,0 +1,138 @@
+# icon-registry.tsv — catalog of icons the skill may use. Nothing here is downloaded up front:
+# scripts/icons.py fetches, cleans and caches an icon the first time a diagram uses its class.
+# Columns (tab-separated): class, group, source, pinned URL, brand colour (Simple Icons only; applied as fill).
+# Add a row to add an icon; keep URLs pinned. Licensing per source: see references/icons.md.
+class	group	source	url	color
+aws-lambda	AWS	terrastruct	https://icons.terrastruct.com/aws%2FCompute%2FAWS-Lambda.svg	
+aws-ec2	AWS	terrastruct	https://icons.terrastruct.com/aws%2FCompute%2FAmazon-EC2.svg	
+aws-ecs	AWS	terrastruct	https://icons.terrastruct.com/aws%2FCompute%2FAmazon-Elastic-Container-Service.svg	
+aws-eks	AWS	terrastruct	https://icons.terrastruct.com/aws%2FCompute%2FAmazon-Elastic-Kubernetes-Service.svg	
+aws-fargate	AWS	terrastruct	https://icons.terrastruct.com/aws%2FCompute%2FAWS-Fargate.svg	
+aws-ecr	AWS	terrastruct	https://icons.terrastruct.com/aws%2FCompute%2FAmazon-EC2-Container-Registry.svg	
+aws-s3	AWS	terrastruct	https://icons.terrastruct.com/aws%2FStorage%2FAmazon-Simple-Storage-Service-S3.svg	
+aws-dynamodb	AWS	terrastruct	https://icons.terrastruct.com/aws%2FDatabase%2FAmazon-DynamoDB.svg	
+aws-rds	AWS	terrastruct	https://icons.terrastruct.com/aws%2FDatabase%2FAmazon-RDS.svg	
+aws-aurora	AWS	terrastruct	https://icons.terrastruct.com/aws%2FDatabase%2FAmazon-Aurora.svg	
+aws-elasticache	AWS	terrastruct	https://icons.terrastruct.com/aws%2FDatabase%2FAmazon-ElastiCache.svg	
+aws-sqs	AWS	terrastruct	https://icons.terrastruct.com/aws%2FApplication%20Integration%2FAmazon-Simple-Queue-Service-SQS.svg	
+aws-sns	AWS	terrastruct	https://icons.terrastruct.com/aws%2FApplication%20Integration%2FAmazon-Simple-Notification-Service-SNS.svg	
+aws-eventbridge	AWS	terrastruct	https://icons.terrastruct.com/aws%2FApplication%20Integration%2FAmazon-EventBridge.svg	
+aws-step-functions	AWS	terrastruct	https://icons.terrastruct.com/aws%2FApplication%20Integration%2FAWS-Step-Functions.svg	
+aws-kinesis	AWS	terrastruct	https://icons.terrastruct.com/aws%2FAnalytics%2FAmazon-Kinesis-Data-Streams.svg	
+aws-api-gateway	AWS	terrastruct	https://icons.terrastruct.com/aws%2FNetworking%20&%20Content%20Delivery%2FAmazon-API-Gateway.svg	
+aws-cloudfront	AWS	terrastruct	https://icons.terrastruct.com/aws%2FNetworking%20&%20Content%20Delivery%2FAmazon-CloudFront.svg	
+aws-route53	AWS	terrastruct	https://icons.terrastruct.com/aws%2FNetworking%20&%20Content%20Delivery%2FAmazon-Route-53.svg	
+aws-elb	AWS	terrastruct	https://icons.terrastruct.com/aws%2FNetworking%20&%20Content%20Delivery%2FElastic-Load-Balancing.svg	
+aws-vpc	AWS	terrastruct	https://icons.terrastruct.com/aws%2FNetworking%20&%20Content%20Delivery%2FAmazon-VPC.svg	
+aws-cognito	AWS	terrastruct	https://icons.terrastruct.com/aws%2FSecurity%2C%20Identity%2C%20&%20Compliance%2FAmazon-Cognito.svg	
+aws-secrets-manager	AWS	terrastruct	https://icons.terrastruct.com/aws%2FSecurity%2C%20Identity%2C%20&%20Compliance%2FAWS-Secrets-Manager.svg	
+aws-cloudwatch	AWS	terrastruct	https://icons.terrastruct.com/aws%2FManagement%20&%20Governance%2FAmazon-CloudWatch.svg	
+aws-ses	AWS	terrastruct	https://icons.terrastruct.com/aws%2FCustomer%20Engagement%2FAmazon-Simple-Email-Service-SES.svg	
+aws-sagemaker	AWS	terrastruct	https://icons.terrastruct.com/aws%2FMachine%20Learning%2FAmazon-SageMaker.svg	
+gcp-cloud-run	GCP	terrastruct	https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FCompute%2FCloud%20Run.svg	
+gcp-cloud-functions	GCP	terrastruct	https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FCompute%2FCloud%20Functions.svg	
+gcp-cloud-storage	GCP	terrastruct	https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FStorage%2FCloud%20Storage.svg	
+gcp-pubsub	GCP	terrastruct	https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FData%20Analytics%2FCloud%20PubSub.svg	
+gcp-bigquery	GCP	terrastruct	https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FData%20Analytics%2FBigQuery.svg	
+gcp-cloud-sql	GCP	terrastruct	https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDatabases%2FCloud%20SQL.svg	
+gcp-firestore	GCP	terrastruct	https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDatabases%2FCloud%20Firestore.svg	
+gcp-spanner	GCP	terrastruct	https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDatabases%2FCloud%20Spanner.svg	
+gcp-memorystore	GCP	terrastruct	https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDatabases%2FCloud%20Memorystore.svg	
+gcp-cloud-tasks	GCP	terrastruct	https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDeveloper%20Tools%2FCloud%20Tasks.svg	
+gcp-cloud-scheduler	GCP	terrastruct	https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FDeveloper%20Tools%2FCloud%20Scheduler.svg	
+gcp-load-balancing	GCP	terrastruct	https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FNetworking%2FCloud%20Load%20Balancing.svg	
+gcp-cloud-cdn	GCP	terrastruct	https://icons.terrastruct.com/gcp%2FProducts%20and%20services%2FNetworking%2FCloud%20CDN.svg	
+azure-functions	Azure	terrastruct	https://icons.terrastruct.com/azure%2FCompute%20Service%20Color%2FFunction%20Apps.svg	
+azure-aks	Azure	terrastruct	https://icons.terrastruct.com/azure%2FContainer%20Service%20Color%2FKubernetes%20Services.svg	
+azure-container-instances	Azure	terrastruct	https://icons.terrastruct.com/azure%2FContainer%20Service%20Color%2FContainer%20Instances.svg	
+azure-blob-storage	Azure	terrastruct	https://icons.terrastruct.com/azure%2FStorage%20Service%20Color%2FBlob%20Storage.svg	
+azure-cosmos-db	Azure	terrastruct	https://icons.terrastruct.com/azure%2FDatabases%20Service%20Color%2FAzure%20Cosmos%20DB.svg	
+azure-sql	Azure	terrastruct	https://icons.terrastruct.com/azure%2FDatabases%20Service%20Color%2FSQL%20Databases.svg	
+azure-redis	Azure	terrastruct	https://icons.terrastruct.com/azure%2FDatabases%20Service%20Color%2FAzure%20Cache%20for%20Redis.svg	
+azure-service-bus	Azure	terrastruct	https://icons.terrastruct.com/azure%2FIntegration%20Service%20Color%2FAzure%20Service%20Bus.svg	
+azure-event-hubs	Azure	terrastruct	https://icons.terrastruct.com/azure%2FAnalytics%20Service%20Color%2FEvent%20Hubs.svg	
+azure-api-management	Azure	terrastruct	https://icons.terrastruct.com/azure%2FIntegration%20Service%20Color%2FAPI%20Management%20Services.svg	
+azure-front-door	Azure	terrastruct	https://icons.terrastruct.com/azure%2FNetworking%20Service%20Color%2FFront%20Doors.svg	
+postgres	Datastores & messaging	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/postgresql/postgresql-original.svg	
+mysql	Datastores & messaging	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/mysql/mysql-original.svg	
+mariadb	Datastores & messaging	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/mariadb/mariadb-original.svg	
+sqlite	Datastores & messaging	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/sqlite/sqlite-original.svg	
+mongodb	Datastores & messaging	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/mongodb/mongodb-original.svg	
+redis	Datastores & messaging	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/redis/redis-original.svg	
+memcached	Datastores & messaging	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/memcached/memcached-original.svg	
+cassandra	Datastores & messaging	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/cassandra/cassandra-original.svg	
+elasticsearch	Datastores & messaging	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/elasticsearch/elasticsearch-original.svg	
+neo4j	Datastores & messaging	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/neo4j/neo4j-original.svg	
+influxdb	Datastores & messaging	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/influxdb/influxdb-original.svg	
+kafka	Datastores & messaging	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/apachekafka/apachekafka-original.svg	
+rabbitmq	Datastores & messaging	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/rabbitmq/rabbitmq-original.svg	
+nats	Datastores & messaging	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/nats/nats-original.svg	
+airflow	Datastores & messaging	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/apacheairflow/apacheairflow-original.svg	
+spark	Datastores & messaging	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/apachespark/apachespark-original.svg	
+docker	Platform & delivery	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/docker/docker-original.svg	
+kubernetes	Platform & delivery	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/kubernetes/kubernetes-original.svg	
+helm	Platform & delivery	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/helm/helm-original.svg	
+terraform	Platform & delivery	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/terraform/terraform-original.svg	
+pulumi	Platform & delivery	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/pulumi/pulumi-original.svg	
+ansible	Platform & delivery	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/ansible/ansible-original.svg	
+nginx	Platform & delivery	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/nginx/nginx-original.svg	
+linux	Platform & delivery	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/linux/linux-original.svg	
+cloudflare	Platform & delivery	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/cloudflare/cloudflare-original.svg	
+vercel	Platform & delivery	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/vercel/vercel-original.svg	
+firebase	Platform & delivery	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/firebase/firebase-original.svg	
+supabase	Platform & delivery	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/supabase/supabase-original.svg	
+github	Platform & delivery	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/github/github-original.svg	
+github-actions	Platform & delivery	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/githubactions/githubactions-original.svg	
+gitlab	Platform & delivery	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/gitlab/gitlab-original.svg	
+jenkins	Platform & delivery	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/jenkins/jenkins-original.svg	
+argocd	Platform & delivery	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/argocd/argocd-original.svg	
+prometheus	Observability	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/prometheus/prometheus-original.svg	
+grafana	Observability	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/grafana/grafana-original.svg	
+opentelemetry	Observability	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/opentelemetry/opentelemetry-original.svg	
+kibana	Observability	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/kibana/kibana-original.svg	
+sentry	Observability	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/sentry/sentry-original.svg	
+datadog	Observability	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/datadog/datadog-original.svg	
+nodejs	Runtimes & languages	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/nodejs/nodejs-original.svg	
+bun	Runtimes & languages	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/bun/bun-original.svg	
+typescript	Runtimes & languages	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/typescript/typescript-original.svg	
+python	Runtimes & languages	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/python/python-original.svg	
+go	Runtimes & languages	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/go/go-original.svg	
+java	Runtimes & languages	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/java/java-original.svg	
+kotlin	Runtimes & languages	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/kotlin/kotlin-original.svg	
+rust	Runtimes & languages	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/rust/rust-original.svg	
+ruby	Runtimes & languages	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/ruby/ruby-original.svg	
+php	Runtimes & languages	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/php/php-original.svg	
+elixir	Runtimes & languages	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/elixir/elixir-original.svg	
+dotnet	Runtimes & languages	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/dotnetcore/dotnetcore-original.svg	
+react	Frameworks & protocols	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/react/react-original.svg	
+nextjs	Frameworks & protocols	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/nextjs/nextjs-original.svg	
+vue	Frameworks & protocols	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/vuejs/vuejs-original.svg	
+angular	Frameworks & protocols	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/angular/angular-original.svg	
+svelte	Frameworks & protocols	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/svelte/svelte-original.svg	
+express	Frameworks & protocols	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/express/express-original.svg	
+nestjs	Frameworks & protocols	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/nestjs/nestjs-original.svg	
+django	Frameworks & protocols	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/django/django-plain.svg	
+flask	Frameworks & protocols	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/flask/flask-original.svg	
+fastapi	Frameworks & protocols	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/fastapi/fastapi-original.svg	
+rails	Frameworks & protocols	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/rails/rails-plain.svg	
+laravel	Frameworks & protocols	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/laravel/laravel-original.svg	
+spring	Frameworks & protocols	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/spring/spring-original.svg	
+prisma	Frameworks & protocols	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/prisma/prisma-original.svg	
+sqlalchemy	Frameworks & protocols	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/sqlalchemy/sqlalchemy-original.svg	
+graphql	Frameworks & protocols	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/graphql/graphql-plain.svg	
+grpc	Frameworks & protocols	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/grpc/grpc-plain.svg	
+trpc	Frameworks & protocols	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/trpc/trpc-original.svg	
+socketio	Frameworks & protocols	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/socketio/socketio-original.svg	
+slack	SaaS & third parties	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/slack/slack-original.svg	
+twilio	SaaS & third parties	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/twilio/twilio-original.svg	
+okta	SaaS & third parties	devicon	https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/okta/okta-original.svg	
+stripe	SaaS & third parties	simple-icons	https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/stripe.svg	635BFF
+anthropic	SaaS & third parties	simple-icons	https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/anthropic.svg	191919
+auth0	SaaS & third parties	simple-icons	https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/auth0.svg	EB5424
+clerk	SaaS & third parties	simple-icons	https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/clerk.svg	6C47FF
+resend	SaaS & third parties	simple-icons	https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/resend.svg	000000
+posthog	SaaS & third parties	simple-icons	https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/posthog.svg	000000
+temporal	SaaS & third parties	simple-icons	https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/temporal.svg	000000
+snowflake	SaaS & third parties	simple-icons	https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/snowflake.svg	29B5E8
+clickhouse	SaaS & third parties	simple-icons	https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/clickhouse.svg	FFCC01
+shopify	SaaS & third parties	simple-icons	https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/shopify.svg	7AB55C

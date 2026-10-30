@@ -1,0 +1,54 @@
+# ERD: candidates and hiring pipelines.
+...@_style
+direction: right
+
+title: Hiring data model {class: title}
+
+candidates: {
+  shape: sql_table
+  id: uuid {constraint: primary_key}
+  full_name: text
+  email: text {constraint: unique}
+  source: text
+  created_at: timestamptz
+}
+
+pipelines: {
+  shape: sql_table
+  id: uuid {constraint: primary_key}
+  job_title: text
+  team: text
+  status: text
+}
+
+stages: {
+  shape: sql_table
+  id: uuid {constraint: primary_key}
+  pipeline_id: uuid {constraint: foreign_key}
+  name: text
+  position: int
+}
+
+applications: {
+  shape: sql_table
+  id: uuid {constraint: primary_key}
+  candidate_id: uuid {constraint: foreign_key}
+  pipeline_id: uuid {constraint: foreign_key}
+  stage_id: uuid {constraint: foreign_key}
+  applied_at: timestamptz
+}
+
+interviews: {
+  shape: sql_table
+  id: uuid {constraint: primary_key}
+  application_id: uuid {constraint: foreign_key}
+  interviewer: text
+  scheduled_at: timestamptz
+  score: int
+}
+
+applications.candidate_id -> candidates.id
+applications.pipeline_id -> pipelines.id
+applications.stage_id -> stages.id
+stages.pipeline_id -> pipelines.id
+interviews.application_id -> applications.id

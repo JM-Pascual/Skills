@@ -1,0 +1,49 @@
+# Data flow: how an uploaded or pushed bank statement gets reconciled.
+...@_style
+...@_icons
+direction: right
+
+title: Bank statement reconciliation {class: title}
+
+accountant: Accountant {class: actor}
+bank: Bank feed API {class: external}
+stripe: Stripe {class: [external; stripe]}
+
+vpc: Payments VPC {
+  class: [boundary; aws-vpc]
+  api: Payments API {class: [svc; aws-api-gateway]}
+  parse: Parse statement {class: [svc; aws-lambda]}
+  q: Statements queue {class: [queue; aws-sqs]}
+  match: Matcher {class: [svc; critical]}
+  notify: Notifier {class: [svc; aws-lambda]}
+  data: Data stores {
+    class: boundary
+    ledger: Ledger DB {class: [store; postgres]}
+    cache: Redis cache? {class: [store; inferred]}
+    audit: Audit log {class: [store; aws-s3]}
+  }
+}
+
+accountant -> vpc.api: uploads statement
+bank -> vpc.parse: "pushes [webhook]" {class: async}
+vpc.api -> vpc.parse: invokes
+vpc.parse -> vpc.q: publishes {class: async}
+vpc.q -> vpc.match: consumes {class: [async; critical-path]}
+vpc.match -> vpc.data.ledger: writes matches {class: critical-path}
+vpc.match -> vpc.data.cache: reads rules? {class: inferred-edge}
+vpc.match -> stripe: fetches payouts
+vpc.match -> vpc.notify: emits mismatch {class: async}
+vpc.notify -> accountant: emails report
+vpc.parse -> vpc.data.audit: stores raw file
+vpc.match -> vpc.data.audit: appends decision
+vpc.api -> vpc.data.ledger: reads status
+
+legend: "" {
+  class: legend
+  c: Component {class: [svc; legend-item]}
+  s: Datastore {class: [store; legend-item]}
+  e: External {class: [external; legend-item]}
+  k: Focus {class: [critical; legend-item]}
+  i: Inferred? {class: [svc; inferred; legend-item]}
+  edges: "──  sync     - - -  async     ━━  critical path     ·····  inferred" {class: legend-text}
+}

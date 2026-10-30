@@ -1,0 +1,23 @@
+# State machine: lifecycle of an order.
+...@_style
+direction: right
+
+title: Order lifecycle {class: title}
+
+start: "" {shape: circle; width: 20; height: 20; style.fill: "#57606A"}
+pending: Pending {class: svc}
+paid: Paid {class: [svc; critical]}
+fulfilled: Fulfilled {class: svc}
+shipped: Shipped {class: svc}
+delivered: Delivered {class: svc}
+cancelled: Cancelled {class: svc}
+refunded: Refunded {class: svc}
+
+start -> pending: order created
+pending -> paid: payment succeeded {class: critical-path}
+pending -> cancelled: payment failed / timeout
+paid -> fulfilled: items picked {class: critical-path}
+paid -> refunded: customer cancels
+fulfilled -> shipped: label printed {class: critical-path}
+shipped -> delivered: carrier confirms {class: critical-path}
+delivered -> refunded: return accepted

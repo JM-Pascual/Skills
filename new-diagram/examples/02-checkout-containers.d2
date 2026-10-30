@@ -1,0 +1,41 @@
+# Containers: what runs where when a shopper checks out.
+...@_style
+...@_icons
+direction: right
+
+title: E-commerce checkout — containers {class: title}
+
+shopper: Shopper {class: actor}
+
+web: Storefront {
+  class: [svc; nextjs]
+}
+
+aws: AWS (eu-west-1) {
+  class: boundary
+  gw: API Gateway {class: [svc; aws-api-gateway]}
+  ecs: ECS cluster {
+    class: [boundary; aws-ecs]
+    orders: Orders service {class: [svc; nodejs]}
+    payments: Payments service {class: [svc; critical; nodejs]}
+    email: Email worker {class: [svc; nodejs]}
+  }
+  db: Orders DB {class: [store; aws-rds]}
+  cache: Cart cache {class: [store; redis]}
+  events: Order events {class: [queue; kafka]}
+}
+
+stripe: Stripe {class: [external; stripe]}
+resend: Resend {class: [external; resend]}
+
+shopper -> web: browses, pays
+web -> aws.gw: "REST [HTTPS]"
+aws.gw -> aws.ecs.orders: POST /orders
+aws.gw -> aws.ecs.payments: POST /payments {class: critical-path}
+aws.ecs.orders -> aws.cache: reads cart
+aws.ecs.orders -> aws.db: writes order
+aws.ecs.payments -> stripe: creates PaymentIntent {class: critical-path}
+stripe -> aws.ecs.payments: "webhook [payment_succeeded]" {class: async}
+aws.ecs.payments -> aws.events: publishes OrderPaid {class: async}
+aws.events -> aws.ecs.email: consumes {class: async}
+aws.ecs.email -> resend: sends receipt

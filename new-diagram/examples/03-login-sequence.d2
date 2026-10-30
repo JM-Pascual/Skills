@@ -1,0 +1,26 @@
+# Sequence: OIDC login with Auth0 and a server-side session.
+...@_style
+...@_icons
+
+title: Login (OIDC authorization code flow) {class: title}
+
+# Participants are uniform boxes: person/cylinder shapes render oversized in sequence diagrams.
+flow: "" {
+  shape: sequence_diagram
+  user: User {class: svc}
+  app: Next.js app {class: [svc; nextjs]}
+  auth0: Auth0 {class: [external; auth0]}
+  api: Accounts API {class: [svc; fastapi]}
+  redis: Session store {class: [svc; redis]}
+
+  user -> app: clicks "Log in"
+  app -> user: "302 → /authorize"
+  user -> auth0: signs in
+  auth0 -> app: "redirect with ?code" {class: critical-path}
+  app -> auth0: exchanges code for tokens {class: critical-path}
+  auth0 -> app: id_token + access_token
+  app -> api: "GET /me [Bearer]"
+  api -> app: profile
+  app -> redis: stores session
+  app -> user: sets session cookie
+}

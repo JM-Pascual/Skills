@@ -1,0 +1,39 @@
+# Deployment: from merge to production on EKS via GitOps.
+...@_style
+...@_icons
+direction: right
+
+title: CI/CD and deployment {class: title}
+
+dev: Developer {class: actor}
+
+gh: GitHub {
+  class: [boundary; github]
+  repo: App repo {class: svc}
+  actions: CI workflow {class: [svc; github-actions]}
+  gitops: Deploy manifests repo {class: svc}
+}
+
+aws: AWS {
+  class: boundary
+  ecr: Container registry {class: [store; aws-ecr]}
+  eks: EKS cluster {
+    class: [boundary; aws-eks]
+    argocd: Argo CD {class: [svc; argocd]}
+    staging: staging namespace {class: [svc; kubernetes]}
+    prod: production namespace {class: [svc; critical; kubernetes]}
+  }
+}
+
+tf: Terraform {class: [svc; terraform]}
+
+dev -> gh.repo: merges PR
+gh.repo -> gh.actions: triggers
+gh.actions -> aws.ecr: pushes image
+gh.actions -> gh.gitops: bumps image tag
+gh.gitops -> aws.eks.argocd: "pulled by Argo CD [GitOps]" {class: async}
+aws.eks.argocd -> aws.eks.staging: syncs
+aws.eks.argocd -> aws.eks.prod: "syncs [manual approval]" {class: critical-path}
+aws.eks.staging -> aws.ecr: pulls image
+aws.eks.prod -> aws.ecr: pulls image
+tf -> aws: provisions
